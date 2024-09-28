@@ -1,0 +1,267 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    background-color: #000000;
+}
+
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+a {
+    text-decoration: none;
+    color:rgb(253, 252, 252)
+}
+.contenedor {
+    width: 100%;
+    min-height: 100vh;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows:60px auto ;
+    grid-template-areas: "encabezado encabezado"
+                        "menu contenido";
+    transition: all.3s ease;
+}
+.contenedor.active {
+    grid-template-columns: 300px auto;
+}
+
+
+
+
+.encabezado {
+    grid-area: encabezado;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px ;
+    grid-template-areas: "logo busqueda iconos";
+    background-color: #000;
+
+}
+.encabezado .contenedor-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+
+}
+.encabezado .contenedor-logo .boton-menu {
+    border:none;
+    padding:10px;
+    background: #2e2e2e;
+    cursor:pointer;
+    font-size: 18px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    background-color: #000000;
+    color:white
+
+}
+.encabezado .contenedor-logo .boton-menu:hover {
+    background: #555353;
+}
+.encabezado .contenedor-logo .logo .fa-solid{
+    background: #ff000f;
+    padding: 7px 12px;
+    border-radius:7px;
+    font-size: 8px;
+    color: #fff;
+    position: relative;
+    top:-4px;
+    margin-right: 4px;
+}
+.encabezado .contenedor-logo .logo {
+    font-family:sans-serif;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    top:2px;
+}
+
+.encabezado .barra-busqueda {
+    grid-area: busqueda;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.encabezado .barra-busqueda input {
+    min-width: 60%;
+    padding:0 15px;
+    height:35px;
+    line-height: 35px;
+    border:19x solid #ffffff;
+    font-size:16px;
+    font-family:'Times New Roman', Times, serif;
+color: white;
+
+}
+.encabezado .barra-busqueda button {
+    height: 35px;
+    border:10px solid #1d1d1d;
+    border-left:100px;
+    color:#ffffff;
+    background: #1d1d1d;
+    padding: 0 25px;
+    cursor:pointer;
+
+
+
+
+}
+.encabezado .barra-busqueda button:heaver {
+    background: rgb(77, 75, 75); 
+    color: rgb(255, 255, 255); 
+
+}
+.encabezado .botones-encabezado{
+    grid-area: iconos;
+    display:flex;
+    align-items: center;
+
+}
+.encabezado .botones-encabezado button {
+    background: none;
+    border:none;
+    width: 40px;
+    height:40px;
+    font-size: 18px;
+    padding: 7px 12px;
+    border-radius:100px;
+    color:#f4f2f2;
+    margin-right: 20px;
+    cursor:pointer;
+}
+.encabezado .botones-encabezado button:hover {
+    background: #2e2e2e;  
+}
+
+.encabezado .botones-encabezado .avatar {
+    width: 30px;
+    height:30px;
+    display:inline-block;
+}
+.encabezado .botones-encabezado .avatar img {
+    vertical-align: top;
+    width:100%;
+    border-radius: 100px;
+}
+.menu-lateral {
+    grid-area: menu;
+    background:#000000;
+    overflow: hidden;
+}
+.menu-lateral a {
+    display: block;
+    padding: 15px 35px ;
+    color:#ffffff;
+    min-width: 700px;
+}
+.menu-lateral a:hover {
+    background: #6a6969;
+}
+.menu-lateral a.active {
+    background: #363636;
+    font-weight: bold;
+}
+.menu-lateral .fa-solid {
+    color: #ffffff;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral .fa-brands {
+    color: #fffbfb;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral .fa-regular {
+    color: #fffefe;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral a.active .fa-solid {
+    color: #f1f0f0;
+}
+.menu-lateral hr{
+    margin: 20px 0;
+    border:1px solid #424242;
+    background: #000000;
+}
+
+.main {
+    grid-area:contenido;
+    background: #000000;
+    padding: 40px;
+
+}
+
+.main .titulo {
+    margin-bottom:50px;
+}
+.main .grid-videos {
+    display:grid;
+    grid-gap: 60px 5px;
+    grid-template-columns:repeat(3, 1fr);
+}
+.main .grid-videos .video {
+    width: 100;
+    display: block;
+}
+.video h3 {
+    font-weight: 600; 
+    font-size: 19px; 
+    color: #000000; 
+    margin: 2px 0;
+    align-items: center; 
+}
+
+.main .grid-videos .video img{
+    width:100%;
+}
+
+.main {
+    display: flex;        
+    flex-wrap: wrap;      
+    gap: 10px;            
+}
+
+.titulo {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color: rgb(255, 253, 253); 
+    background: #272626; 
+    padding: 5px 10px;
+    border-radius: 8px; 
+    letter-spacing: 1px; 
+    font-size: 15px; 
+    text-align: center; 
+    cursor: pointer;
+    display: inline-block;
+    width: auto; 
+}
+
+.titulo:hover {
+    background: rgb(77, 75, 75); 
+    color: rgb(255, 255, 255); 
+}
+.video-info {
+    display: flex;
+    align-items: middle;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.logo-canal {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px; /* Espacio entre el logo y el texto */
+}
+
+
